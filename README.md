@@ -63,7 +63,7 @@ Ensure your `config.h` points to `127.0.0.1` on port `16667`. Then launch:
 | **Enter** | Send message or execute command |
 | **/j #channel** | Join a specific channel |
 | **/msg <nick> <msg>** | Send a private message |
-| **/q** | Gracefully quit the pisshole |
+| **/q** | Gracefully quit the pipeline |
 
 ---
 
