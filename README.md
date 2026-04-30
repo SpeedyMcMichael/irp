@@ -73,7 +73,7 @@ All settings (colors, nicks, SASL credentials) are managed in `src/config.h`.
 
 > **Note**: If you receive a `904 SASL authentication failed` notice but still connect, ensure your `PASS` matches your registered NickServ account. If you aren't registered yet, Libera will let you in as an unidentified user.
 
-TODO/CONTRIBUTOR GOALS:
+# TODO/CONTRIBUTOR GOALS:
 * Add and integrate `openssl`
 * Add to AUR
 * Iron out kinks
