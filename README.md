@@ -1,11 +1,10 @@
 # irp (Internet Relay Pipeline)
 
-A minimalist, suckless IRC client written in **C** with **ncurses**. It features a zero-bloat architecture, delegating heavy encryption to the Unix pipeline while handling modern SASL authentication internally.
+A minimalist, suckless IRC client written in **C** with **ncurses**. It features modern SASL authentication and (later) TLS.
 
 ## Features
 * **Minimalist UI**: Gray-on-blue ncurses interface with a 1000-line scrollback pad.
 * **SASL PLAIN**: Internal state machine for authenticating with modern networks like Libera.Chat.
-* **Security via Pipeline**: No OpenSSL/GnuTLS linked to the binary. Use `socat` or `stunnel` for TLS.
 * **Suckless Build**: Uses Meson/Ninja for fast, reproducible compilation.
 
 ---
@@ -37,8 +36,9 @@ A minimalist, suckless IRC client written in **C** with **ncurses**. It features
 ---
 
 ## Deployment Workflow
+TODO: integrate `openssl` into `irp`
 
-Because `irp` does not include a TLS stack (keeping the binary under 100KB), you must tunnel your connection to secure your credentials.
+TEMPORARY SECURITY MESURES:
 
 ### 1. Establish the Secure Tunnel
 Run `socat` in the background to bridge a local port to Libera's SSL port:
@@ -72,3 +72,8 @@ Ensure your `config.h` points to `127.0.0.1` on port `16667`. Then launch:
 All settings (colors, nicks, SASL credentials) are managed in `src/config.h`. 
 
 > **Note**: If you receive a `904 SASL authentication failed` notice but still connect, ensure your `PASS` matches your registered NickServ account. If you aren't registered yet, Libera will let you in as an unidentified user.
+
+TODO/CONTRIBUTOR GOALS:
+* Add and integrate `openssl`
+* Add to AUR
+* Iron out kinks
